@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Income & Expense Tracker</h1>
+
+        <!-- Income Tracker Form -->
+        <h3>Income Tracker</h3>
+        <form id="income-form">
+            <input type="text" id="income-name" placeholder="Income Name" required>
+            <input type="number" id="income-amount" placeholder="Income Amount" required>
+            <input type="date" id="income-date" required>
+            <button type="submit">Add Income</button>
+        </form>
+
+        <!-- Income Table -->
+        <h3>Income List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="income-list"></tbody>
+        </table>
+
+        <!-- Expense Tracker Form -->
+        <h3>Expense Tracker</h3>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Expense Amount" required>
+            <select id="expense-category" required>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="expense-date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <!-- Expense Table -->
+        <h3>Expense List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="expense-list"></tbody>
+        </table>
+
+        <!-- Total Amount Section -->
+        <div class="total-amount" id="total-amount"></div>
+
+        <!-- Circular Progress Tracker (Pie Chart) -->
+        <h3>Expense Distribution</h3>
+        <div class="circle-graph-container">
+            <canvas id="circle-graph" width="200" height="200"></canvas>
+        </div>
+
+        <!-- Filter for Expenses -->
+        <div class="filter">
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
